@@ -46,4 +46,12 @@ public interface Coercion<T> {
    * Description of the coercion useful for logging
    */
   String toString();
+
+  /**
+   * If the coercion returns a fully fledged bean from a container then its already inverted i.e. IOC. In most cases this should
+   * just be false
+   */
+  default boolean isInverted() {
+    return false;
+  }
 }
